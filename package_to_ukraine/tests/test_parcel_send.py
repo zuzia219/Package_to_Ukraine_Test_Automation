@@ -1,5 +1,5 @@
 from package_to_ukraine.pages.parcel_search import SearchParcel
-from package_to_ukraine.pages.parcel_delivery import ParcelDelivery, Sender
+from package_to_ukraine.pages.parcel_delivery import ParcelDelivery, Sender, ParcelItem
 
 import pytest
 
@@ -32,7 +32,16 @@ class TestParcelSend(BaseTest):
                          sender_flat_number  =  "1",
                          sender_phone  =  "664540929",
                          sender_email   =  "monika@monika.nl")
+        item1 = ParcelItem(parcel_item_description = "Czekoladki",
+                           parcel_item_quantity = "2",
+                           parcel_item_weight = "10",
+                           parcel_item_value_client_currency = "20")
+        item2 = ParcelItem(parcel_item_description = "Kubek",
+                           parcel_item_quantity = "1",
+                           parcel_item_weight = "2",
+                           parcel_item_value_client_currency = "5")
         delivery_page.set_sender_info(sender)
+
 
 
 

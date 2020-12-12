@@ -1,6 +1,6 @@
 from selenium.webdriver.common.keys import Keys
 
-from package_to_ukraine.locators.locators import DeliveryMethodsLocators, DeliveryPointsLocators, ParcelLocators, SenderLocators
+from package_to_ukraine.locators.locators import DeliveryMethodsLocators, DeliveryPointsLocators, ParcelLocators, SenderLocators, CustomsDeclarationLocators
 import logging
 
 
@@ -49,6 +49,28 @@ class ParcelDelivery:
         self.driver.find_element_by_id(SenderLocators.sender_flat_number_id).send_keys(Sender.sender_flat_number)
         self.driver.find_element_by_id(SenderLocators.sender_phone_id).send_keys(Sender.sender_phone)
         self.driver.find_element_by_id(SenderLocators.sender_email_id).send_keys(Sender.sender_email)
+
+    def set_custom_declaration_row(self, ParcelItem):
+        self.driver.find_element_by_id(CustomsDeclarationLocators.parcel_item_description_name).send_keys(ParcelItem.parcel_item_description)
+        self.driver.find_element_by_id(CustomsDeclarationLocators.parcel_item_quantity_name).send_keys(
+            ParcelItem.parcel_item_quantity)
+        self.driver.find_element_by_id(CustomsDeclarationLocators.parcel_item_weight_name).send_keys(
+            ParcelItem.parcel_item_weight)
+        self.driver.find_element_by_id(CustomsDeclarationLocators.parcel_item_value_client_currency_name).send_keys(
+            ParcelItem.parcel_item_value_client_currency)
+
+    def add_next_custom_declaration_row(self):
+        self.driver.find_element_by_xpath(CustomsDeclarationLocators.next_item_xpath).click()
+        
+
+class ParcelItem:
+    def __init__(self, parcel_item_description, parcel_item_quantity, parcel_item_weight, 
+    parcel_item_value_client_currency):
+        self.parcel_item_description = parcel_item_description
+        self.parcel_item_quantity = parcel_item_quantity
+        self.parcel_item_weight = parcel_item_weight
+        self.parcel_item_value_client_currency = parcel_item_value_client_currency
+
 
 
 class Sender:
