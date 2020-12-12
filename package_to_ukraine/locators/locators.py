@@ -10,7 +10,7 @@ class SenderLocators:
     sender_name_id = "senderName"
     sender_postal_code_id = "senderPostalCode"
     sender_city_id = "senderCity"
-    sender_street_id = "senderAddressStreet"
+    sender_street_id = "senderStreet"
     sender_house_number_id = "senderHouseNumber"
     sender_flat_number_id = "senderFlatNumber"
     sender_phone_id = "senderPhone"
