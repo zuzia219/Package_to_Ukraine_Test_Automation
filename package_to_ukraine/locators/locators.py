@@ -36,6 +36,7 @@ class CustomsDeclarationLocators:
     parcel_item_quantity_name = "parcelItemQuantity"
     parcel_item_weight_name = "parcelItemWeight"
     parcel_item_value_client_currency_name = "parcelItemValueClientCurrency"
+    parcel_item_number_class = "duty-item__lp-value"
     next_item_xpath = "//button[text()='Dodaj kolejną pozycję']"
 
 class StatementLocators:
@@ -47,6 +48,10 @@ class StatementLocators:
 
 class PayLocators:
         next_step_xpath = "//button[text()='Następny krok']"
+
+
+class InvalidMessageLocators:
+    invalid_weight_xpath = "//p[text()='Łączna waga paczki nie może być niższa od deklarowanej wagi zawartości']"
 
 
 

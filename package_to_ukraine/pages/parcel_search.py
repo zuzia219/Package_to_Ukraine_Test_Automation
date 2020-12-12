@@ -13,5 +13,3 @@ class SearchParcel:
         self.driver.find_element_by_name(ParcelLocators.parcel_weight_name).send_keys(weight)
         self.driver.find_element_by_xpath(ParcelLocators.parcel_search_xpath).click()
 
-
-
