@@ -3,7 +3,6 @@ from package_to_ukraine.pages.parcel_delivery import ParcelDelivery, Sender
 
 import pytest
 
-
 from package_to_ukraine.tests.base_test import BaseTest
 
 @pytest.mark.usefixtures("setup")
